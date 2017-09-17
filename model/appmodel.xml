@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/entitymodel.xsd">
+	<!-- ========================================================= -->
+	<!-- ======================== Defaults ======================= -->
+	<!-- ========================================================= -->
+	<title>Entity of Feriwaala Application</title>
+	<description>None</description>
+	<copyright></copyright>
+	<version></version>
+
+
+	<entity name="PersonInfo">
+		<field name="personId" type="Long" />
+		<field name="phoneNo" type="String" />
+		<field name="email" type="String" />
+		<field name="city" type="String" />
+		<field name="countryCode" type="String" />
+		<field name="streetAddress" type="String" />
+		<field name="postalCode" type="String" />
+		<prim-key field="personId" />
+	</entity>
+
+	<entity name="BillingInfo">
+		<field name="billingId" type="Long" />
+		<field name="billingAddress" type="String" />
+		<field name="creditCardId" type="Long" />
+		<field name="creditCardNo" type="String" />
+		<field name="creditCardPIN" type="String" />
+		<field name="creditCardExpDate" type="Timestamp" />
+		<field name="billDate" type="Timestamp" />
+		<prim-key field="personId" />
+	</entity>
+
+	<entity name="Shipper">
+		<field name="shipperId" type="Long" />
+		<field name="companyName" type="String" />
+		<field name="phone" type="String" />
+		<prim-key field="shipperId" />
+	</entity>
+
+	<entity name="Supplier">
+		<field name="supplierId" type="Long" />
+		<field name="contactFName" type="String" />
+		<field name="contactLName" type="String" />
+		<field name="contactNo" type="String" />
+		<field name="nId" type="Long" />
+		<field name="contactTitle" type="String" />
+		<field name="createdDate" type="String" />
+		<field name="companyName" type="Timestamp" />
+		<prim-key field="supplierId" />
+	</entity>
+
+	<entity name="Customer">
+		<field name="customerId" type="Long" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<prim-key field="customerId" />
+	</entity>
+
+	<entity name="Admin">
+		<field name="adminId" type="Long" />
+		<field name="adminFName" type="String" />
+		<field name="adminLName" type="String" />
+		<prim-key field="adminId" />
+	</entity>
+
+	<entity name="Order">
+		<field name="orderId" type="Long" />
+		<field name="customerId" type="Long" />
+		<field name="orderNumber" type="Long" />
+		<field name="orderDate" type="Timestamp" />
+		<field name="shippedDate" type="Timestamp" />
+		<field name="shipVia" type="String" />
+		<field name="shipperId" type="Long" />
+		<field name="freight" type="String" />
+		<prim-key field="orderId" />
+	</entity>
+
+	<entity name="Cart">
+		<field name="cartId" type="Long" />
+		<field name="noOfProducts" type="Long" />
+		<field name="totalPrice" type="BigDecimal" />
+		<prim-key field="cartId" />
+	</entity>
+
+	<entity name="Product">
+		<field name="productId" type="Long" />
+		<field name="productName" type="String" />
+		<field name="productDescription" type="String" />
+		<field name="supplierId" type="Long" />
+		<field name="quantityPerUnit" type="Long" />
+		<field name="unitPrice" type="BigDecimal" />
+		<field name="unitWeight" type="BigDecimal" />
+		<field name="unitsInStock" type="BigDecimal" />
+		<field name="unitsOnOrder" type="BigDecimal" />
+		<field name="reorderLevel" type="BigDecimal" />
+		<field name="isDirectDeliverable" type="String" />
+		<prim-key field="productId" />
+	</entity>
+
+	<entity name="Category">
+		<field name="categoryId" type="Long" />
+		<field name="categoryName" type="String" />
+		<field name="description" type="String" />
+		<field name="categoryImage" type="String" />
+		<prim-key field="categoryId" />
+	</entity>
+
+	<entity name="OrderDetails">
+		<field name="orderId" type="Long" />
+		<field name="discount" type="BigDecimal" />
+		<field name="productId" type="Long" />
+		<field name="unitPrice" type="BigDecimal" />
+		<field name="quantity" type="BigDecimal" />
+		<field name="orderNumber" type="Long" />
+		<prim-key field="orderId" />
+	</entity>
+
+
+	<!-- WorkingHolyDay -->
+	<!-- <entity entity-name="WorkingHolyDay" package-name="org.ofbiz.planning"> 
+		<description></description> <field name="year" type="id-ne"></field> <field 
+		name="fromDate" type="date"></field> <field name="thruDate" type="date"></field> 
+		<field name="status" type="id-ne"></field> <field name="countDay" type="id-ne"></field> 
+		<field name="descripsion" type="description"></field> <field name="companyId" 
+		type="id-ne"></field> <relation type="many" fk-name="WRK_HOLYDAY_PRATY" rel-entity-name="Party"> 
+		<key-map field-name="companyId" rel-field-name="partyId" /> </relation> </entity> -->
+</entitymodel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
